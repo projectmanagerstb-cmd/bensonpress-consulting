@@ -235,6 +235,33 @@ body.cart-open{overflow:hidden}
 }
 /* END cart styles */
 
+/* Client site layout */
+img{max-width:100%;height:auto}
+.brand-lockup img,.brand-mark img,.footer-logo img,.monogram img,.cart-icon{max-width:none}
+.lede{max-width:40rem;font-size:1.15rem}
+.actions{margin-top:22px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:28px}
+.step{min-width:0;border-top:3px solid var(--bp-accent-gold);padding-top:14px}
+.step-num{margin:0 0 8px;color:var(--bp-accent-gold);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.step h3{margin:.1em 0 .35em;font-size:1.45rem}
+.step p,.panel p,.lede{overflow-wrap:break-word}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-top:28px}
+.compare .panel{min-width:0}
+.includes{margin:.4em 0 0;padding-left:1.15rem}
+.includes li{margin:.4em 0}
+.cred-list{margin:.6em 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.cred-list li{margin:0;padding-left:14px;border-left:3px solid var(--bp-accent-gold)}
+.closing{max-width:40rem}
+.cover-thumb{width:100%;max-width:280px;height:auto;margin:0 0 16px}
+@media(max-width:820px){
+  .steps{grid-template-columns:1fr 1fr}
+  .compare{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .wrap{padding-left:18px;padding-right:18px}
+}
+
 /* Consulting header */
 .brand{flex-direction:column;align-items:flex-start}
 .brand-name{display:block;margin-top:4px;font:600 .68rem/1 "Source Sans 3","Helvetica Neue",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--bp-accent-gold)}
