@@ -34,13 +34,20 @@
     var aliases = {
       "pm consulting": "PMO Setup & Consulting",
       "pm": "PMO Setup & Consulting",
+      "pmo": "PMO Setup & Consulting",
       "pmo setup & consulting": "PMO Setup & Consulting",
       "ai governance": "AI Governance",
+      "ai-governance": "AI Governance",
       "training & workshops": "Training & Workshops",
       "training": "Training & Workshops",
-      "kit customization": "Kit Customization",
-      "kit license inquiry": "Kit Customization",
-      "other": "Other Inquiry"
+      "licensing": "Licensing",
+      "kit license inquiry": "Licensing",
+      "kits": "Kit information",
+      "kit customization": "Kit information",
+      "consulting": "Consulting",
+      "other": "Other Inquiry",
+      "other inquiry": "Other Inquiry",
+      "pmo setup kit": "PMO Setup & Consulting"
     };
     var wanted = params.get("topic");
     if (wanted) {

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://consulting.bensonpress.com/</loc></url>
+<url><loc>https://consulting.bensonpress.com/services.html</loc></url>
 <url><loc>https://consulting.bensonpress.com/consulting.html</loc></url>
 <url><loc>https://consulting.bensonpress.com/kits.html</loc></url>
+<url><loc>https://consulting.bensonpress.com/training-workshops.html</loc></url>
+<url><loc>https://consulting.bensonpress.com/cart.html</loc></url>
 <url><loc>https://consulting.bensonpress.com/pmo-setup-kit.html</loc></url>
 <url><loc>https://consulting.bensonpress.com/ai-governance-for-pmos.html</loc></url>
 <url><loc>https://consulting.bensonpress.com/raci-communication-automation-kit.html</loc></url>
