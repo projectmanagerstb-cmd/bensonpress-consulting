@@ -458,7 +458,7 @@ input, select, textarea { border-radius: 14px; }
   width: min(1120px, calc(100% - 32px));
   margin: 28px auto 56px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 16px;
   align-items: stretch;
 }
@@ -475,12 +475,12 @@ input, select, textarea { border-radius: 14px; }
 .tile-hero, .tile-navy { background: #071A2D; color: #F7F5F0; border-color: transparent; }
 .tile-hero h1, .tile-hero p, .tile-navy h2, .tile-navy p { color: #F7F5F0; }
 .tile-hero em, .tile-navy em { color: #CFA658; }
-.tile-hero { grid-column: span 4; padding: 36px; }
-.tile-framework { grid-column: span 2; }
-.tile-kit { grid-column: span 2; display: flex; flex-direction: column; }
-.tile-train, .tile-services { grid-column: span 3; }
-.tile-about { grid-column: span 4; }
-.tile-pay, .tile-contact { grid-column: span 1; }
+.tile-hero { grid-column: span 8; padding: 36px; }
+.tile-framework { grid-column: span 4; }
+.tile-kit { grid-column: span 4; display: flex; flex-direction: column; }
+.tile-train, .tile-services { grid-column: span 6; }
+.tile-about { grid-column: span 6; }
+.tile-pay, .tile-contact { grid-column: span 3; }
 .tile .cover { background: #071A2D; border-radius: 14px; padding: 12px; margin-bottom: 16px; }
 .tile .cover img { max-height: 180px; width: auto; margin: 0 auto; object-fit: contain; }
 .tile .from-price { margin-top: auto; }
