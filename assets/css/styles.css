@@ -175,6 +175,13 @@ p { margin: 0 0 1em; }
 .form-feedback.is-error { color: #8d2a2a; }
 .purchase-panel, .contact-form-card, .payment-card, .about-credential-card { background: var(--white); color: var(--ink); }
 .purchase-from strong { font-family: var(--serif); font-size: 2.4rem; }
+.flow-stepper { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: none; }
+.flow-stepper li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 20px; box-shadow: 0 14px 34px rgba(7, 26, 45, .07); min-width: 0; }
+.flow-stepper li > span { width: 48px; height: 48px; border-radius: 999px; display: grid; place-items: center; background: var(--navy); color: var(--gold); font-family: var(--serif); font-size: 1.15rem; }
+.flow-stepper h3 { margin: 0 0 .3em; font-size: 1.35rem; }
+.flow-stepper p { margin: 0; color: var(--muted); }
+.service-offer { background: var(--white); }
+.service-offer .offer-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 8px; }
 .step-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
 .step-list li { display: flex; gap: 12px; border-top: 1px solid var(--line); padding-top: 8px; }
 .step-list span:first-child { color: var(--gold); font-family: var(--serif); }
@@ -205,6 +212,7 @@ input, select, textarea {
 .feature { display: grid; grid-template-columns: minmax(0, 280px) 1fr; gap: 28px; align-items: start; }
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; margin: 18px 0 0; padding: 0; }
 .gallery button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: left; }
+.gallery figcaption { margin-top: 8px; font-size: .95rem; }
 .kit-file { border-top: 1px solid var(--line); padding: 14px 0; }
 .kit-kind { color: var(--gold); letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
 .faq-item { border-left: 3px solid var(--gold); padding-left: 14px; margin: 14px 0; }
@@ -374,6 +382,7 @@ input, select, textarea { border-radius: 14px; }
   to { transform: translate3d(4%, 3%, 0) scale(1.08); }
 }
 @media (max-width: 980px) {
+  .flow-stepper { grid-template-columns: 1fr; }
   .primary-nav {
     background: rgba(7, 26, 45, .94);
     backdrop-filter: blur(16px);
