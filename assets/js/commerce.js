@@ -12,6 +12,11 @@
       individual: "aig-individual",
       team: "aig-team",
       enterprise: "aig-enterprise"
+    },
+    raci: {
+      individual: "raci-individual",
+      team: "raci-team",
+      enterprise: "raci-enterprise"
     }
   };
 
