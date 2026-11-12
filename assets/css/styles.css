@@ -222,7 +222,18 @@ input, select, textarea {
 .kit-kind { color: var(--gold); letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
 .faq-item { border-left: 3px solid var(--gold); padding-left: 14px; margin: 14px 0; }
 dialog.lightbox { border: 0; padding: 16px; max-width: min(1280px, calc(100vw - 24px)); width: 100%; background: var(--navy); color: var(--ivory); }
-dialog.lightbox img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #fff; border-radius: 12px; }
+dialog.lightbox img { display: block; width: 100%; height: auto; max-height: 68vh; object-fit: contain; background: #fff; border-radius: 12px; transform-origin: 0 0; user-select: none; -webkit-user-drag: none; }
+.lightbox-bar { flex-wrap: wrap; }
+.lightbox-zoom { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.lightbox-zoom .btn { min-width: 44px; min-height: 44px; padding: 8px 12px; }
+.lightbox-zoom .btn[disabled] { opacity: .45; cursor: not-allowed; }
+.lightbox-viewport { overflow: hidden; touch-action: none; background: #fff; border-radius: 12px; max-height: 68vh; cursor: zoom-in; }
+.lightbox-viewport.is-zoomed { cursor: grab; }
+.lightbox-viewport.is-dragging { cursor: grabbing; }
+.lightbox-viewport.is-dragging img { transition: none; }
+.lightbox-viewport img { transition: transform .12s ease; }
+.m365-callout { max-width: 46rem; }
+.m365-callout h2 { margin-top: .2em; }
 dialog.lightbox::backdrop { background: rgba(7, 26, 45, .82); }
 .lightbox-bar, .lightbox-nav { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 .badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; padding: 4px 8px; }
@@ -404,5 +415,6 @@ input, select, textarea { border-radius: 14px; }
     transition: none;
   }
   .reveal { opacity: 1; transform: none; }
+  .lightbox-viewport img { transition: none; }
   .btn:hover, .service-card:hover, .featured-kit:hover, .process-grid article:hover, .values-grid article:hover, .payment-card:hover, .purchase-panel:hover { transform: none; }
 }
