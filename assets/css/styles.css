@@ -255,3 +255,139 @@ dialog.lightbox::backdrop { background: rgba(7, 26, 45, .82); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Liquid pass: glass, depth, and motion. Content and colors stay the same. */
+h1, h2 { letter-spacing: -0.034em; }
+h1 { font-size: clamp(2.75rem, 5.8vw, 5.05rem); }
+h2 { font-size: clamp(2.15rem, 4vw, 3.55rem); }
+h3 { font-size: clamp(1.45rem, 2vw, 1.85rem); }
+.section { padding: clamp(72px, 9vw, 112px) 0; }
+em { color: #6f5316; }
+.hero em, .page-hero em, .section-dark em, .closing-cta em, .leader-graphic em, .detail-art em, .about-signature em { color: var(--gold); }
+.section .eyebrow, .section .mini-label, .section .service-number, .section .step-no, .section .kit-kind, .section .art-code, .section .kit-caption, .legal-date, .pay-security { color: #6f5316; }
+.section-dark .eyebrow, .section-dark .mini-label, .hero .eyebrow, .page-hero .eyebrow, .closing-cta .eyebrow, .leader-graphic .eyebrow, .detail-art .art-code, .about-signature .mini-label { color: var(--gold); }
+
+.site-header {
+  background: rgba(7, 26, 45, .72);
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  box-shadow: 0 1px 0 rgba(207, 166, 88, .28);
+  transition: background .35s ease, box-shadow .35s ease;
+}
+.nav-shell, .brand-image { transition: min-height .35s ease, height .35s ease; }
+.site-header.is-condensed {
+  background: rgba(7, 26, 45, .9);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .28);
+}
+.site-header.is-condensed .nav-shell { min-height: 64px; }
+.site-header.is-condensed .brand-image { height: 38px; }
+
+.hero, .page-hero, .section-dark, .closing-cta { isolation: isolate; position: relative; overflow: hidden; }
+.hero::before, .page-hero::before, .section-dark::before, .closing-cta::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20% auto;
+  height: 150%;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(36, 96, 158, .5), transparent 42%),
+    radial-gradient(circle at 78% 18%, rgba(207, 166, 88, .28), transparent 34%),
+    radial-gradient(circle at 62% 78%, rgba(8, 36, 72, .55), transparent 46%);
+  animation: liquid-drift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero > *, .page-hero > .container, .section-dark > .container, .closing-cta > .container { position: relative; z-index: 1; }
+.hero-home::after, .page-hero::after, .section-dark::after, .closing-cta::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 46px;
+  background: var(--ivory);
+  clip-path: ellipse(68% 100% at 50% 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-home::after { background: var(--white); }
+.closing-cta::after { background: #051422; height: 38px; }
+.hero-home { padding-bottom: 18px; }
+.hero-bottom-bar { position: relative; z-index: 1; margin-bottom: 28px; }
+.page-hero { padding-bottom: 88px; }
+.closing-cta { padding-bottom: 92px; }
+
+.btn, .menu-toggle, .badge { border-radius: 999px; }
+.service-card, .featured-kit, .process-grid article, .values-grid article,
+.purchase-panel, .contact-form-card, .payment-card, .about-credential-card,
+.notice-panel, .compare-strip, .hero-stage, .page-hero-side, .about-signature,
+.detail-art, .leader-graphic, input, select, textarea, dialog.lightbox, .cart-drawer, .cart-row {
+  border-radius: 22px;
+}
+.license-option, .faq-item { border-radius: 16px; }
+.featured-kit-img, .kit-shop-visual, .detail-cover { background: transparent; border-radius: 24px; }
+.featured-kit-img img, .kit-shop-visual img, .detail-cover img {
+  border-radius: 24px;
+  box-shadow: 0 22px 46px rgba(7, 26, 45, .2);
+}
+.service-card, .featured-kit, .process-grid article, .values-grid article, .payment-card, .purchase-panel, .contact-form-card, .about-credential-card {
+  box-shadow: 0 14px 34px rgba(7, 26, 45, .07), 0 1px 0 rgba(255, 255, 255, .7) inset;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.service-card:hover, .featured-kit:hover, .process-grid article:hover, .values-grid article:hover, .payment-card:hover, .purchase-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(7, 26, 45, .12);
+}
+.hero-stage, .page-hero-side, .detail-art, .leader-graphic, .about-signature {
+  background: rgba(247, 245, 240, .08);
+  border: 1px solid rgba(247, 245, 240, .2);
+  backdrop-filter: blur(16px) saturate(1.25);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+.btn { transition: transform .25s ease, box-shadow .25s ease, background-position .55s ease, color .25s ease, border-color .25s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn-gold, .btn-nav, .btn.solid {
+  background-image: linear-gradient(105deg, #9a6d28 0%, #CFA658 36%, #f4e2bc 50%, #CFA658 64%, #9a6d28 100%);
+  background-size: 220% 100%;
+  background-position: 0 0;
+  color: #071A2D;
+  box-shadow: 0 10px 24px rgba(207, 166, 88, .28);
+}
+.btn-gold:hover, .btn-nav:hover, .btn.solid:hover {
+  background-image: linear-gradient(105deg, #9a6d28 0%, #CFA658 36%, #f4e2bc 50%, #CFA658 64%, #9a6d28 100%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  color: #071A2D;
+}
+.btn-outline-light { backdrop-filter: blur(8px); }
+.detail-art, .leader-graphic {
+  background: linear-gradient(165deg, #14375f 0%, #071A2D 62%);
+  color: var(--ivory);
+  border: 1px solid rgba(207, 166, 88, .4);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 22px 46px rgba(7, 26, 45, .18), inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+input, select, textarea { border-radius: 14px; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-in { opacity: 1; transform: none; }
+@keyframes liquid-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(4%, 3%, 0) scale(1.08); }
+}
+@media (max-width: 980px) {
+  .primary-nav {
+    background: rgba(7, 26, 45, .94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 0 0 22px 22px;
+  }
+  .btn-nav { padding: 12px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .page-hero::before, .section-dark::before, .closing-cta::before,
+  .btn, .service-card, .featured-kit, .process-grid article, .values-grid article, .payment-card, .purchase-panel, .reveal, .nav-shell, .brand-image, .site-header {
+    animation: none;
+    transition: none;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .btn:hover, .service-card:hover, .featured-kit:hover, .process-grid article:hover, .values-grid article:hover, .payment-card:hover, .purchase-panel:hover { transform: none; }
+}

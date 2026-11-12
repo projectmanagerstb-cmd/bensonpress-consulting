@@ -63,6 +63,34 @@
     syncSubject();
   }
 
+  var header = document.getElementById("site-header");
+  var headerTicking = false;
+  function updateHeader() {
+    if (header) header.classList.toggle("is-condensed", window.scrollY > 18);
+    headerTicking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!headerTicking) {
+      headerTicking = true;
+      window.requestAnimationFrame(updateHeader);
+    }
+  }, { passive: true });
+  updateHeader();
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var revealNodes = document.querySelectorAll("main > section:not(.hero):not(.page-hero), .service-card, .featured-kit, .process-grid > article, .values-grid > article");
+    revealNodes.forEach(function (el) { el.classList.add("reveal"); });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
+    revealNodes.forEach(function (el) { observer.observe(el); });
+  }
+
   var dialog = document.getElementById("lightbox");
   if (!dialog || typeof dialog.showModal !== "function") return;
   var items = Array.prototype.slice.call(document.querySelectorAll("[data-gallery-item]"));
