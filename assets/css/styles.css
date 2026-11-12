@@ -418,3 +418,112 @@ input, select, textarea { border-radius: 14px; }
   .lightbox-viewport img { transition: none; }
   .btn:hover, .service-card:hover, .featured-kit:hover, .process-grid article:hover, .values-grid article:hover, .payment-card:hover, .purchase-panel:hover { transform: none; }
 }
+
+/* Corporate bento. Solid surfaces, hairline tiles, no glass or moving gradients. */
+.hero::before, .page-hero::before, .section-dark::before, .closing-cta::before,
+.hero::after, .hero-home::after, .page-hero::after, .section-dark::after, .closing-cta::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+.site-header, .site-header.is-condensed {
+  background: #071A2D;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(207, 166, 88, .45);
+}
+.btn, .menu-toggle, .badge, .tile, .service-card, .featured-kit, .process-grid article, .values-grid article,
+.payment-card, .purchase-panel, .contact-form-card, .about-credential-card, .notice-panel, .flow-stepper li,
+.license-option, input, select, textarea, dialog.lightbox {
+  border-radius: 18px;
+}
+.btn-gold, .btn-nav, .btn.solid, .btn-gold:hover, .btn-nav:hover, .btn.solid:hover {
+  background: #CFA658;
+  background-image: none;
+  box-shadow: none;
+  color: #071A2D;
+}
+.btn:hover, .service-card:hover, .featured-kit:hover, .process-grid article:hover, .values-grid article:hover,
+.payment-card:hover, .purchase-panel:hover, .tile:hover { transform: none; }
+.reveal, .reveal.is-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+.hero-stage, .page-hero-side, .detail-art, .leader-graphic, .about-signature {
+  background: #0d2744;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.primary-nav { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.bento {
+  width: min(1120px, calc(100% - 32px));
+  margin: 28px auto 56px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.tile {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid rgba(7, 26, 45, .12);
+  box-shadow: 0 10px 28px rgba(7, 26, 45, .05);
+  padding: 24px;
+  min-width: 0;
+}
+.tile h1, .tile h2 { letter-spacing: -.03em; }
+.tile h2 { font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
+.tile-hero, .tile-navy { background: #071A2D; color: #F7F5F0; border-color: transparent; }
+.tile-hero h1, .tile-hero p, .tile-navy h2, .tile-navy p { color: #F7F5F0; }
+.tile-hero em, .tile-navy em { color: #CFA658; }
+.tile-hero { grid-column: span 8; padding: 36px; }
+.tile-framework { grid-column: span 4; }
+.tile-kit { grid-column: span 4; display: flex; flex-direction: column; }
+.tile-train, .tile-services { grid-column: span 6; }
+.tile-about { grid-column: span 6; }
+.tile-pay, .tile-contact { grid-column: span 3; }
+.tile .cover { background: #071A2D; border-radius: 14px; padding: 12px; margin-bottom: 16px; }
+.tile .cover img { max-height: 180px; width: auto; margin: 0 auto; object-fit: contain; }
+.tile .from-price { margin-top: auto; }
+.tile .from-price strong { font-family: var(--serif); font-size: 1.8rem; }
+.bento-steps { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
+.bento-steps li { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; border-top: 1px solid rgba(207, 166, 88, .35); padding-top: 8px; }
+.bento-steps span { color: #CFA658; font-family: var(--serif); }
+.bento-steps small { display: block; color: rgba(247, 245, 240, .75); }
+.tile a.text-link { color: inherit; }
+.tile:not(.tile-hero):not(.tile-navy) a.text-link { color: #071A2D; }
+
+body:not(.home) main > section {
+  width: min(1120px, calc(100% - 32px));
+  margin: 16px auto;
+  border-radius: 18px;
+  border: 1px solid rgba(7, 26, 45, .12);
+  box-shadow: 0 10px 28px rgba(7, 26, 45, .05);
+  background: #fff;
+  overflow: hidden;
+}
+body:not(.home) .page-hero,
+body:not(.home) .closing-cta,
+body:not(.home) .section-dark {
+  background: #071A2D;
+  color: #F7F5F0;
+  border-color: transparent;
+}
+body:not(.home) .kit-shop { background: transparent; border: 0; box-shadow: none; padding: 0; }
+body:not(.home) .kit-shop-grid,
+body:not(.home) .service-offer {
+  background: #fff;
+  border: 1px solid rgba(7, 26, 45, .12);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(7, 26, 45, .05);
+  padding: 8px;
+  margin: 0 0 16px;
+}
+body:not(.home) main > section.service-offer { background: #fff; }
+@media (max-width: 980px) {
+  .bento, .tile-hero, .tile-framework, .tile-kit, .tile-train, .tile-services, .tile-about, .tile-pay, .tile-contact { grid-column: 1 / -1; }
+  .bento { grid-template-columns: 1fr; }
+  .primary-nav { background: #071A2D; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .nav-shell, .brand-image, .lightbox-viewport img { transition: none; }
+}
